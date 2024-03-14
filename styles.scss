@@ -1,0 +1,79 @@
+@font-face {
+	font-family: "Bank Sans EF CY";
+	src: local("banksansefcy_med"), url(/banksansefcy_med.otf);
+}
+@font-face {
+	font-family: "Arial";
+	src: local("ARIAL"), url(/ARIAL.TTF);
+}
+.header_logo {
+	padding: 20px 27px;
+}
+header {
+	display: flex;
+	flex-direction: row;
+}
+.header_main_section {
+	display: flex;
+	flex-direction: row;
+	background: rgb(124, 114, 110);
+	justify-content: space-between;
+	width: 100%;
+	padding: 23px 20px 22px 20px;
+	align-items: center;
+}
+.header_title h1 {
+	color: white;
+	font-family: Bank Sans EF CY;
+	font-size: 40px;
+	font-weight: 500;
+}
+.header_user_name {
+	display: flex;
+	color: white;
+	font-family: Arial;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: normal;
+}
+.header_right_side {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.header_user_debt {
+	display: flex;
+	color: white;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: 500;
+	padding-right: 15px;
+	justify-content: flex-end;
+	box-sizing: border-box;
+}
+.header_user_debt span {
+	margin-left: 5px;
+}
+.header_button_section {
+	margin-left: 50px;
+}
+.header_button_section button {
+	box-sizing: border-box;
+	border: 3px solid rgb(255, 255, 255);
+	border-radius: 5px;
+	background: transparent;
+	&:nth-child(1) {
+		padding: 11px 12px 9px 8px;
+	}
+	&:nth-child(2) {
+		padding: 12px 9px 9px 8px;
+	}
+	&:nth-child(3) {
+		padding: 10px 8px 10px 12px;
+	}
+}
+.header_list_button {
+	display: flex;
+	align-items: center;
+	margin-left: 25px;
+}
