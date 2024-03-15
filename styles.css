@@ -6,11 +6,26 @@
   font-family: "Arial";
   src: local("ARIAL"), url(/ARIAL.TTF);
 }
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  border-color: #f16832;
+  color: #f16832;
+}
+
+body {
+  font-size: 1rem;
+  font-family: Arial;
+}
+
 .header_logo {
   padding: 20px 27px;
 }
 
 header {
+  position: fixed;
+  width: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -18,7 +33,7 @@ header {
 .header_main_section {
   display: flex;
   flex-direction: row;
-  background: rgb(124, 114, 110);
+  background: #7c726e;
   justify-content: space-between;
   width: 100%;
   padding: 23px 20px 22px 20px;
@@ -30,6 +45,10 @@ header {
   font-family: Bank Sans EF CY;
   font-size: 40px;
   font-weight: 500;
+}
+
+.header_title a {
+  text-decoration: none;
 }
 
 .header_user_name {
@@ -63,12 +82,14 @@ header {
 }
 
 .header_button_section {
+  display: flex;
+  gap: 10px;
   margin-left: 50px;
 }
 
 .header_button_section button {
   box-sizing: border-box;
-  border: 3px solid rgb(255, 255, 255);
+  border: 3px solid white;
   border-radius: 5px;
   background: transparent;
 }
@@ -86,4 +107,64 @@ header {
   display: flex;
   align-items: center;
   margin-left: 25px;
+}
+
+.side_bar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 6.8rem;
+}
+
+.side_bar_middle {
+  display: flex;
+  flex-direction: column;
+  background: #d1cecd;
+}
+
+.side_bar_emelemt {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  writing-mode: vertical-lr;
+  padding: 50px 41px 54px 40px;
+  border-bottom: 3px solid white;
+  max-height: 100vh;
+}
+
+.side_bar_emelemt p {
+  transform: rotate(-180deg);
+  font-size: 2em;
+  font-weight: 400;
+  color: white;
+  line-height: normal;
+}
+
+.side_bar_emelemt svg {
+  margin-bottom: 8px;
+}
+
+.side_bar_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #d1cecd;
+  gap: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.side_bar_button {
+  background: #7c726e;
+  border: 3px solid white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.side_bar_button:nth-child(1) {
+  padding: 10px;
+}
+.side_bar_button:nth-child(2) {
+  padding: 13px 16px 12px 19px;
 }
