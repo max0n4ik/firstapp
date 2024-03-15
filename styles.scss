@@ -6,17 +6,34 @@
 	font-family: "Arial";
 	src: local("ARIAL"), url(/ARIAL.TTF);
 }
+
+$orangecolor: #f16832;
+$graycolor: #d1cecd;
+$brouncolor: #7c726e;
+.button {
+	cursor: pointer;
+	&:hover {
+		border-color: $orangecolor;
+		color: $orangecolor;
+	}
+}
+body {
+	font-size: 1rem;
+	font-family: Arial;
+}
 .header_logo {
 	padding: 20px 27px;
 }
 header {
+	position: fixed;
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 }
 .header_main_section {
 	display: flex;
 	flex-direction: row;
-	background: rgb(124, 114, 110);
+	background: $brouncolor;
 	justify-content: space-between;
 	width: 100%;
 	padding: 23px 20px 22px 20px;
@@ -27,6 +44,9 @@ header {
 	font-family: Bank Sans EF CY;
 	font-size: 40px;
 	font-weight: 500;
+}
+.header_title a {
+	text-decoration: none;
 }
 .header_user_name {
 	display: flex;
@@ -55,11 +75,13 @@ header {
 	margin-left: 5px;
 }
 .header_button_section {
+	display: flex;
+	gap: 10px;
 	margin-left: 50px;
 }
 .header_button_section button {
 	box-sizing: border-box;
-	border: 3px solid rgb(255, 255, 255);
+	border: 3px solid white;
 	border-radius: 5px;
 	background: transparent;
 	&:nth-child(1) {
@@ -76,4 +98,60 @@ header {
 	display: flex;
 	align-items: center;
 	margin-left: 25px;
+}
+.side_bar {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 6.8rem;
+}
+.side_bar_middle {
+	display: flex;
+	flex-direction: column;
+	background: $graycolor;
+}
+.side_bar_emelemt {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	writing-mode: vertical-lr;
+	padding: 50px 41px 54px 40px;
+	border-bottom: 3px solid white;
+	max-height: 100vh;
+}
+.side_bar_emelemt p {
+	transform: rotate(-180deg);
+	font-size: 2em;
+	font-weight: 400;
+	color: white;
+	line-height: normal;
+}
+.side_bar_emelemt svg {
+	margin-bottom: 8px;
+}
+.side_bar_bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: $graycolor;
+	gap: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.side_bar_button {
+	background: $brouncolor;
+	border: 3px solid white;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	&:nth-child(1) {
+		padding: 10px;
+	}
+	&:nth-child(2) {
+		padding: 13px 16px 12px 19px;
+	}
+}
+
+@media screen {
 }
