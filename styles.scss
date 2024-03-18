@@ -10,6 +10,7 @@
 $orangecolor: #f16832;
 $graycolor: #d1cecd;
 $brouncolor: #7c726e;
+$lightgray: #e8e4e1;
 .button {
 	cursor: pointer;
 	&:hover {
@@ -20,6 +21,8 @@ $brouncolor: #7c726e;
 body {
 	font-size: 1rem;
 	font-family: Arial;
+	z-index: -2;
+	position: relative;
 }
 .header_logo {
 	padding: 20px 27px;
@@ -105,6 +108,7 @@ header {
 	flex-direction: column;
 	align-items: center;
 	top: 6.8rem;
+	min-height: 100vh;
 }
 .side_bar_middle {
 	display: flex;
@@ -118,7 +122,6 @@ header {
 	writing-mode: vertical-lr;
 	padding: 50px 41px 54px 40px;
 	border-bottom: 3px solid white;
-	max-height: 100vh;
 }
 .side_bar_emelemt p {
 	transform: rotate(-180deg);
@@ -152,6 +155,166 @@ header {
 		padding: 13px 16px 12px 19px;
 	}
 }
+
+// !main
+
+main {
+	position: relative;
+	z-index: -1;
+	top: 108px;
+	left: 118px;
+	max-width: 100vh;
+}
+.main_grid {
+	display: flex;
+	flex-direction: row;
+	padding: 20px;
+	column-gap: 20px;
+}
+.first_collumn {
+	display: flex;
+	flex-direction: column;
+	min-width: 580px;
+}
+.user_card {
+	display: flex;
+	background: $orangecolor;
+	border-radius: 10px;
+	padding: 27px 30px 34px 30px;
+	color: white;
+	margin-bottom: 20px;
+	p {
+		font-size: 32px;
+		margin-bottom: 9px;
+	}
+	ul {
+		margin-left: 36px;
+	}
+	li {
+		font-size: 16px;
+		margin: 7px 0;
+		&:nth-child(1) {
+			margin-top: 0;
+			list-style-image: url(/user.svg);
+		}
+		&:nth-child(2) {
+			list-style-image: url(/tel.svg);
+		}
+		&:nth-child(3) {
+			list-style-image: url(/letter.svg);
+		}
+	}
+}
+.user_img {
+	margin-right: 31px;
+	border-radius: 5px;
+}
+.list_functions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+	div {
+		border-radius: 10px;
+		padding: 20px 20px 20px 30px;
+		background: $brouncolor;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		p {
+			font-size: 32px;
+			font-family: Bank Sans EF CY;
+			color: white;
+			font-weight: normal;
+		}
+	}
+}
+.orders {
+	background: $graycolor;
+	border-radius: 10px;
+	padding: 20px 30px 20px 30px;
+	color: $brouncolor;
+	margin-bottom: 20px;
+}
+.orders_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	p {
+		font-size: 32px;
+	}
+	button {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		font-size: 16px;
+		background: $brouncolor;
+		padding: 10px 15px;
+		font-family: Bank Sans EF CY;
+		border-radius: 3px;
+		border: 3px solid white;
+		min-width: 210px;
+	}
+}
+.orders_list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.orders_element {
+	display: flex;
+	justify-content: space-between;
+	background: $lightgray;
+
+	button {
+		background: $brouncolor;
+		border-radius: 5px;
+		border: 2px solid $graycolor;
+		min-width: 50px;
+		min-height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+.orders_info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 10px 5px 15px;
+	width: 100%;
+}
+.orders_item {
+	font-weight: 700;
+	font-size: 16px;
+}
+.orders_price {
+	font-size: 16px;
+	font-weight: 500;
+	font-family: Bank Sans EF CY;
+}
+.download_price-list {
+	background: $brouncolor;
+	color: white;
+	padding: 15px 18px 18px 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+}
+.download_header {
+	font-size: 32px;
+	font-weight: 500;
+	font-family: Bank Sans EF CY;
+}
+.date_price-list {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+// !media
 
 @media screen {
 }
