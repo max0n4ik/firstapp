@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Bank Sans EF CY";
-  src: local("banksansefcy_med"), url(/banksansefcy_med.otf);
+  src: local("banksansefcy_med"), url(banksansefcy_med.otf);
 }
 @font-face {
   font-family: "Arial";
@@ -10,8 +10,7 @@
   cursor: pointer;
 }
 .button:hover {
-  border-color: #f16832;
-  color: #f16832;
+  background: #f16832;
 }
 
 body {
@@ -117,13 +116,16 @@ header {
   flex-direction: column;
   align-items: center;
   top: 6.8rem;
-  min-height: 100vh;
+  width: 120px;
+  height: 100%;
 }
 
 .side_bar_middle {
   display: flex;
   flex-direction: column;
   background: #d1cecd;
+  width: 100%;
+  height: 100%;
 }
 
 .side_bar_emelemt {
@@ -131,13 +133,16 @@ header {
   flex-direction: row-reverse;
   align-items: center;
   writing-mode: vertical-lr;
-  padding: 50px 41px 54px 40px;
   border-bottom: 3px solid white;
+  cursor: pointer;
+  justify-content: center;
+  width: 100%;
+  padding: calc((100vw - 480px) / 1200 * 8 + 10px) 0;
 }
 
 .side_bar_emelemt p {
   transform: rotate(-180deg);
-  font-size: 2em;
+  font-size: calc((100vw - 30rem) / 50 * 0.5 + 1.3rem);
   font-weight: 400;
   color: white;
   line-height: normal;
@@ -247,6 +252,9 @@ main {
   color: white;
   font-weight: normal;
 }
+.list_functions div img {
+  cursor: pointer;
+}
 
 .orders {
   background: #d1cecd;
@@ -299,6 +307,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.orders_element button:hover {
+  cursor: pointer;
+  background: #f16832;
 }
 
 .orders_info {

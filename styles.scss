@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Bank Sans EF CY";
-	src: local("banksansefcy_med"), url(/banksansefcy_med.otf);
+	src: local("banksansefcy_med"), url(banksansefcy_med.otf);
 }
 @font-face {
 	font-family: "Arial";
@@ -14,8 +14,7 @@ $lightgray: #e8e4e1;
 .button {
 	cursor: pointer;
 	&:hover {
-		border-color: $orangecolor;
-		color: $orangecolor;
+		background: $orangecolor;
 	}
 }
 body {
@@ -108,24 +107,30 @@ header {
 	flex-direction: column;
 	align-items: center;
 	top: 6.8rem;
-	min-height: 100vh;
+	width: 120px;
+	height: 100%;
 }
 .side_bar_middle {
 	display: flex;
 	flex-direction: column;
 	background: $graycolor;
+	width: 100%;
+	height: 100%;
 }
 .side_bar_emelemt {
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
 	writing-mode: vertical-lr;
-	padding: 50px 41px 54px 40px;
 	border-bottom: 3px solid white;
+	cursor: pointer;
+	justify-content: center;
+	width: 100%;
+	padding: calc((100vw - 480px) / (1920 - 720) * (24 - 16) + 10px) 0;
 }
 .side_bar_emelemt p {
 	transform: rotate(-180deg);
-	font-size: 2em;
+	font-size: calc((100vw - 30rem) / (80 - 30) * (1.5 - 1) + 1.3rem);
 	font-weight: 400;
 	color: white;
 	line-height: normal;
@@ -226,6 +231,9 @@ main {
 			color: white;
 			font-weight: normal;
 		}
+		img {
+			cursor: pointer;
+		}
 	}
 }
 .orders {
@@ -266,7 +274,6 @@ main {
 	display: flex;
 	justify-content: space-between;
 	background: $lightgray;
-
 	button {
 		background: $brouncolor;
 		border-radius: 5px;
@@ -276,6 +283,10 @@ main {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		&:hover {
+			cursor: pointer;
+			background: $orangecolor;
+		}
 	}
 }
 .orders_info {
@@ -343,7 +354,6 @@ main {
 	flex-direction: column;
 	max-width: 488px;
 	gap: 10px;
-
 	div {
 		display: flex;
 	}
@@ -355,5 +365,5 @@ main {
 
 // !media
 
-@media screen {
+@media only screen and (max-width: 1280px) {
 }
