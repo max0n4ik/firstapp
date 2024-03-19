@@ -175,22 +175,21 @@ main {
   position: relative;
   z-index: -1;
   top: 108px;
-  left: 118px;
-  max-width: 100vh;
+  width: 100%;
 }
 
 .main_grid {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   padding: 20px;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 117px;
 }
 
 .first_collumn {
   display: flex;
   flex-direction: column;
-  min-width: 580px;
 }
 
 .user_card {
@@ -339,5 +338,46 @@ main {
 
 .date_price-list {
   font-size: 16px;
+  font-weight: 700;
+}
+
+.comp_card {
+  background: #d1cecd;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.comp_card button {
+  border: 3px solid white;
+  background: #7c726e;
+  color: white;
+  max-width: 210px;
+  font-family: Bank Sans EF CY;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: self-end;
+}
+
+.comp_header {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.comp_info {
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  max-width: 488px;
+  gap: 10px;
+}
+.comp_info div {
+  display: flex;
+}
+.comp_info span {
+  margin-right: 10px;
   font-weight: 700;
 }
