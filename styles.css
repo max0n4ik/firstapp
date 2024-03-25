@@ -189,7 +189,7 @@ main {
   -moz-column-gap: 20px;
        column-gap: 20px;
   grid-template-columns: 1fr 1fr;
-  margin-left: 117px;
+  margin-left: 120px;
 }
 
 .first_collumn {
@@ -246,13 +246,14 @@ main {
   align-items: center;
   justify-content: space-between;
 }
-.list_functions div p {
+.list_functions div a {
   font-size: 32px;
   font-family: Bank Sans EF CY;
   color: white;
   font-weight: normal;
+  text-decoration: none;
 }
-.list_functions div img {
+.list_functions div a {
   cursor: pointer;
 }
 
@@ -392,4 +393,193 @@ main {
 .comp_info span {
   margin-right: 10px;
   font-weight: 700;
+}
+
+.orders_main {
+  display: flex;
+  padding: 20px;
+  margin-left: 120px;
+  flex-direction: column;
+}
+
+.header_orders_title {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: Bank Sans EF CY;
+  color: #7c726e;
+  margin-bottom: 17px;
+}
+
+.header_orders {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.header_orders_enclosure {
+  display: flex;
+  text-align: center;
+}
+.header_orders_enclosure p {
+  color: white;
+  font-size: 16px;
+  font-family: Bank Sans EF CY;
+  text-align: center;
+}
+.header_orders_enclosure .main_section {
+  padding: 10px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #7c726e;
+}
+.header_orders_enclosure .second_section {
+  padding: 10px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f16832;
+}
+.header_orders_enclosure img {
+  margin: 0 8px;
+}
+
+.header_orders_search-bar {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.header_orders_search-bar button {
+  border: 3px solid #7c726e;
+  background: #7c726e;
+  padding: 11px 25px 12px 25px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.header_orders_search-bar input {
+  width: 30%;
+  border: 3px solid #7c726e;
+  font-size: 20px;
+  padding-left: 20px;
+  background: #e8e4e1;
+}
+.header_orders_search-bar input::-moz-placeholder {
+  font-size: 20px;
+  opacity: 0.7;
+}
+.header_orders_search-bar input::placeholder {
+  font-size: 20px;
+  opacity: 0.7;
+}
+.header_orders_search-bar input:focus {
+  outline: none;
+}
+
+.collumn_section {
+  display: flex;
+  gap: 20px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  background: #e8e4e1;
+  border-radius: 10px;
+  padding: 20px;
+}
+.filter .filter_title {
+  margin-bottom: 10px;
+}
+.filter .filter_title p {
+  color: #7c726e;
+  font-size: 32px;
+  font-family: Bank Sans EF CY;
+}
+.filter .filter_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 11px;
+}
+.filter .filter_group .filter_group_name img {
+  position: relative;
+  bottom: 60%;
+  right: -87%;
+}
+.filter .filter_group .filter_group_name p {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.filter .filter_group .filter_group_name p::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #d1cecd;
+  width: 100%;
+  margin-top: 3px;
+}
+.filter .filter_group .check-box {
+  display: flex;
+  flex-direction: column;
+}
+.filter .filter_group .check-box input {
+  margin-right: 10px;
+}
+.filter .filter_group .check-box div {
+  display: flex;
+}
+
+.middle_section {
+  display: flex;
+  flex-direction: column;
+}
+.middle_section .tags_section {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.middle_section .tags_section p {
+  border: 3px solid #d1cecd;
+  padding: 11px 13px 8px 17px;
+  font-size: 16px;
+  font-family: Bank Sans EF CY;
+  color: white;
+  background: #7c726e;
+}
+.middle_section .market_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.middle_section .market_section .market_card {
+  padding: 12px 10px 12px 20px;
+  background: #e8e4e1;
+  display: flex;
+  border-radius: 10px;
+}
+.middle_section .market_section .market_card button {
+  margin-right: 20px;
+  padding: 11px 12px;
+  background: #7c726e;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+.middle_section .market_section .market_card .card_information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.middle_section .market_section .market_card .card_information .name-price {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.middle_section .market_section .market_card .card_information .article {
+  opacity: 0.7;
+}
+.middle_section .market_section .market_card .card_information .color-availab {
+  display: flex;
+  opacity: 0.7;
+  justify-content: space-between;
 }
