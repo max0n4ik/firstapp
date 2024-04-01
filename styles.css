@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 .button:hover {
-  background: #f16832;
+  background: #f16832 !important;
 }
 
 body {
@@ -419,6 +419,7 @@ main {
 .header_orders_enclosure {
   display: flex;
   text-align: center;
+  height: 30%;
 }
 .header_orders_enclosure p {
   color: white;
@@ -448,6 +449,7 @@ main {
   display: flex;
   justify-content: flex-end;
   position: relative;
+  width: 100%;
 }
 .header_orders_search-bar button {
   border: 3px solid #7c726e;
@@ -475,8 +477,14 @@ main {
   outline: none;
 }
 
-.collumn_section {
+.header_block {
   display: flex;
+  justify-content: space-between;
+}
+
+.collumn_section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 20px;
 }
 
@@ -516,14 +524,58 @@ main {
   width: 100%;
   margin-top: 3px;
 }
-.filter .filter_group .check-box {
+.filter .filter_group .checkboxes {
   display: flex;
   flex-direction: column;
 }
-.filter .filter_group .check-box input {
+.filter .filter_group .checkboxes label.checkbox {
+  margin-right: 1rem;
+  padding-left: 1.75rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.filter .filter_group .checkboxes label.checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.filter .filter_group .checkboxes label.checkbox input[type=checkbox]:focus ~ span {
+  border: 2px solid #aab0b9;
+}
+.filter .filter_group .checkboxes label.checkbox input[type=checkbox]:focus:checked ~ span {
+  border: 2px solid #534d4a;
+}
+.filter .filter_group .checkboxes label.checkbox input[type=checkbox]:hover ~ span {
+  transition: 0.4s;
+  background: #f16832 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+) 50% 40% no-repeat;
+}
+.filter .filter_group .checkboxes label.checkbox input[type=checkbox]:checked ~ span {
+  color: #ffffff;
+  background: #7c726e url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+) 50% 40% no-repeat;
+  border: 2px solid #7c726e;
+}
+.filter .filter_group .checkboxes label.checkbox span {
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 1rem;
+  height: 1rem;
+  background-color: #ffffff;
+  border: 2px solid #7c726e;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.filter .filter_group .checkboxes label {
+  margin-bottom: 10px;
+}
+.filter .filter_group .checkboxes input {
   margin-right: 10px;
 }
-.filter .filter_group .check-box div {
+.filter .filter_group .checkboxes div {
   display: flex;
 }
 
