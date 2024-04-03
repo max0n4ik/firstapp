@@ -11,6 +11,7 @@
 }
 .button:hover {
   background: #f16832 !important;
+  transition: 0.2s;
 }
 
 body {
@@ -720,4 +721,33 @@ main {
   background: #7c726e;
   color: white;
   text-align: center;
+}
+
+.catalog {
+  position: absolute;
+  border: 2px solid #7c726e;
+  background: white;
+  border-radius: 5px;
+  width: 242px;
+  z-index: 3;
+}
+.catalog .catalog_element {
+  min-width: 238px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+}
+.catalog .catalog_element:hover {
+  color: white;
+  background: #f16832;
+}
+.catalog .catalog_element p {
+  margin-left: 15px;
+}
+.catalog .catalog_box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
