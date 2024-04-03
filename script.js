@@ -1,78 +1,52 @@
-$(document).on('click', '.main_section', function (e) {
-	$(cat)
-		.css({
-			top: e.clientY,
-			left: e.clientX
-		})
-		.appendTo($(document.body))
-		.on('click', function (e) {
-			$(this).remove();
-		});
-}).on('click', function (e) {
-	if ($(e.target).closest('.main_section').length === 0) {
-		$('.catalog').remove();
-	}
+const box = document.querySelector('.main_section')
+const catalog = document.querySelector('.catalog')
+const imgList = document.querySelectorAll('.catalog_element > img')
+const window1 = document.querySelector('.catalog.window')
+const cart = document.querySelector('.market_card')
+const pop = document.querySelector('.info_pop-up')
+let timer;
+
+box.addEventListener('mousemove', (e) => {
+	const mouseX = e.clientX;
+	const mouseY = e.clientY;
+	catalog.style.top = mouseY + "px";
+	catalog.style.left = mouseX + "px";
+	catalog.style.visibility = 'visible '
+})
+
+catalog.addEventListener('mouseleave', () => {
+	catalog.style.visibility = 'hidden '
+
 });
 
+imgList.forEach(img => {
+	img.addEventListener('mouseenter', (e) => {
+		const mouseX2 = img.offsetLeft + img.clientWidth;
+		const mouseY2 = img.offsetTop;
+		window1.style.top = mouseY2 + "px";
+		window1.style.left = mouseX2 + "px";
+		window1.style.visibility = 'visible';
+	});
+});
 
-let cat = `<div class="catalog">
-<div class="catalog_box">
-	<div class="catalog_element">
-		<p>Трубы</p>
-	</div>
-	<div class="catalog_element">
-		<p>Желоба</p>
-	</div>
-	<div class="catalog_element">
-		<p>Аэраторы</p>
-	</div>
-	<div class="catalog_element">
-		<p>Снегозадержатели</p>
-	</div>
-	<div class="catalog_element">
-		<p>Колпаки</p>
-	</div>
-	<div class="catalog_element">
-		<p>Фартуки</p>
-	</div>
-	<div class="catalog_element">
-		<p>Софиты</p>
-	</div>
-	<div class="catalog_element">
-		<p>Металл</p>
-	</div>
-	<div class="catalog_element">
-		<p>Крепеж и комплектующие</p>
-	</div>
-	<div class="catalog_element">
-		<p>Реклама</p>
-	</div>
-	<div class="catalog_element">
-		<p>Soffito</p>
-	</div>
-	<div class="catalog_element">
-		<p>Шпили</p>
-	</div>
-	<div class="catalog_element">
-		<p>Решетка вентиляционная</p>
-	</div>
-	<div class="catalog_element">
-		<p>StopMoss</p>
-	</div>
-	<div class="catalog_element">
-		<p>Сайдинг</p>
-	</div>
-	<div class="catalog_element">
-		<p>Черепица</p>
-	</div>
-	<div class="catalog_element">
-		<p>Модульные ограждения</p>
-	</div>
-	<div class="catalog_element">
-		<p>Услуги</p>
-	</div>
-	<div class="catalog_element">
-		<p>Черепица</p>
-	</div>
-</div>
-</div>`
+window1.addEventListener('mouseleave', () => {
+	window1.style.visibility = 'hidden '
+
+});
+
+cart.addEventListener('mouseover', (e) => {
+	// Запускаем таймер на 5 секунд
+	timer = setTimeout(() => {
+		const mouseX = e.clientX;
+		const mouseY = e.clientY;
+		pop.style.top = mouseY + "px";
+		pop.style.left = mouseX + "px";
+		pop.style.visibility = 'visible ' // Показываем window2
+	}, 1000);
+});
+
+cart.addEventListener('mouseout', () => {
+	// Очищаем таймер, если курсор покидает window1
+	clearTimeout(timer);
+	pop.style.visibility = 'hidden ' // Скрываем window2
+});
