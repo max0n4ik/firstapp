@@ -434,6 +434,7 @@ main {
   justify-content: center;
   align-items: center;
   background: #7c726e;
+  cursor: pointer;
 }
 .header_orders_enclosure .second_section {
   padding: 10px 8px;
@@ -441,6 +442,7 @@ main {
   justify-content: center;
   align-items: center;
   background: #f16832;
+  cursor: pointer;
 }
 .header_orders_enclosure img {
   margin: 0 8px;
@@ -730,6 +732,7 @@ main {
   border-radius: 5px;
   width: 242px;
   z-index: 3;
+  visibility: hidden;
 }
 .catalog .catalog_element {
   min-width: 238px;
@@ -738,6 +741,7 @@ main {
   align-items: center;
   text-align: center;
   border-radius: 5px;
+  justify-content: space-between;
 }
 .catalog .catalog_element:hover {
   color: white;
@@ -746,8 +750,19 @@ main {
 .catalog .catalog_element p {
   margin-left: 15px;
 }
+.catalog .catalog_element img {
+  margin-right: 5px;
+}
 .catalog .catalog_box {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+}
+
+.info_pop-up {
+  position: absolute;
+  visibility: hidden;
+  border: 2px solid #7c726e;
+  background: white;
+  border-radius: 5px;
 }
