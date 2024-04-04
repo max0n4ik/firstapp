@@ -1,9 +1,9 @@
 const box = document.querySelector('.main_section')
 const catalog = document.querySelector('.catalog')
-const imgList = document.querySelectorAll('.catalog_element > img')
-const window1 = document.querySelector('.catalog.window')
-const cart = document.querySelector('.market_card')
+const catalogElements = document.querySelectorAll('.catalog_element');
+const cart = document.querySelectorAll('.market_card')
 const pop = document.querySelector('.info_pop-up')
+
 let timer;
 
 box.addEventListener('mousemove', (e) => {
@@ -16,37 +16,48 @@ box.addEventListener('mousemove', (e) => {
 
 catalog.addEventListener('mouseleave', () => {
 	catalog.style.visibility = 'hidden '
-
 });
 
-imgList.forEach(img => {
-	img.addEventListener('mouseenter', (e) => {
-		const mouseX2 = img.offsetLeft + img.clientWidth;
-		const mouseY2 = img.offsetTop;
-		window1.style.top = mouseY2 + "px";
-		window1.style.left = mouseX2 + "px";
-		window1.style.visibility = 'visible';
+cart.forEach(x => {
+	x.addEventListener('mouseover', (e) => {
+		// Запускаем таймер на 5 секунд
+		timer = setTimeout(() => {
+			const mouseX = e.clientX;
+			const mouseY = e.clientY;
+			pop.style.top = mouseY + "px";
+			pop.style.left = mouseX + "px";
+			pop.style.visibility = 'visible ' // Показываем window2
+		}, 500);
 	});
-});
+	x.addEventListener('mouseout', () => {
+		// Очищаем таймер, если курсор покидает window1
+		clearTimeout(timer);
+		pop.style.visibility = 'hidden ' // Скрываем window2
+	});
+})
 
-window1.addEventListener('mouseleave', () => {
-	window1.style.visibility = 'hidden '
 
-});
 
-cart.addEventListener('mouseover', (e) => {
-	// Запускаем таймер на 5 секунд
-	timer = setTimeout(() => {
-		const mouseX = e.clientX;
-		const mouseY = e.clientY;
-		pop.style.top = mouseY + "px";
-		pop.style.left = mouseX + "px";
-		pop.style.visibility = 'visible ' // Показываем window2
-	}, 1000);
-});
+catalogElements.forEach(catalogElement => {
+	const windowBlock = catalogElement.querySelector('.catalog.window');
+	const hasAnotherDiv = catalogElement.querySelector('div') !== null;
 
-cart.addEventListener('mouseout', () => {
-	// Очищаем таймер, если курсор покидает window1
-	clearTimeout(timer);
-	pop.style.visibility = 'hidden ' // Скрываем window2
+	if (hasAnotherDiv) {
+		const image = document.createElement('img');
+		image.src = 'vec.svg';
+		catalogElement.appendChild(image);
+		image.addEventListener('mouseenter', () => {
+			const mouseX2 = image.offsetLeft + image.clientWidth;
+			const mouseY2 = image.offsetTop;
+			windowBlock.style.top = mouseY2 + "px";
+			windowBlock.style.left = mouseX2 + "px";
+			windowBlock.style.visibility = 'visible';
+		});
+		windowBlock.addEventListener('mouseleave', () => {
+			windowBlock.style.visibility = 'hidden '
+		});
+		catalog.addEventListener('mouseleave', () => {
+			windowBlock.style.visibility = 'hidden '
+		});
+	}
 });
