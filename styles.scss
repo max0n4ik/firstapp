@@ -634,6 +634,10 @@ main {
 					justify-content: space-between;
 				}
 			}
+			p,
+			span {
+				pointer-events: none;
+			}
 		}
 	}
 }
@@ -748,16 +752,15 @@ main {
 		}
 		p {
 			margin-left: 15px;
+			pointer-events: none;
 		}
 		img {
 			margin-right: 5px;
 		}
 	}
-
 	.catalog_box {
 		display: flex;
 		flex-direction: column;
-		margin-top: 10px;
 	}
 }
 
@@ -767,6 +770,29 @@ main {
 	border: 2px solid $brouncolor;
 	background: white;
 	border-radius: 5px;
+	display: flex;
+	width: 300px;
+	height: 200px;
+	.header_pop {
+		text-align: center;
+		margin-bottom: 8px;
+	}
+	.pop_box {
+		display: flex;
+		flex-direction: column;
+		padding: 15px 20px;
+	}
+	.pop-info_box {
+		display: flex;
+		flex-direction: column;
+		div {
+			display: flex;
+			span {
+				margin-right: 5px;
+				font-weight: 600;
+			}
+		}
+	}
 }
 
 // !media

@@ -649,6 +649,10 @@ main {
   opacity: 0.7;
   justify-content: space-between;
 }
+.middle_section .market_section .market_card p,
+.middle_section .market_section .market_card span {
+  pointer-events: none;
+}
 
 .cart_section {
   background: #e8e4e1;
@@ -760,6 +764,7 @@ main {
 }
 .catalog .catalog_element p {
   margin-left: 15px;
+  pointer-events: none;
 }
 .catalog .catalog_element img {
   margin-right: 5px;
@@ -767,7 +772,6 @@ main {
 .catalog .catalog_box {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
 }
 
 .info_pop-up {
@@ -776,4 +780,27 @@ main {
   border: 2px solid #7c726e;
   background: white;
   border-radius: 5px;
+  display: flex;
+  width: 300px;
+  height: 200px;
+}
+.info_pop-up .header_pop {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.info_pop-up .pop_box {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+}
+.info_pop-up .pop-info_box {
+  display: flex;
+  flex-direction: column;
+}
+.info_pop-up .pop-info_box div {
+  display: flex;
+}
+.info_pop-up .pop-info_box div span {
+  margin-right: 5px;
+  font-weight: 600;
 }
