@@ -5,6 +5,7 @@ const cart = document.querySelectorAll('.market_card')
 const pop = document.querySelector('.info_pop-up')
 
 let timer;
+let timer2;
 
 box.addEventListener('mousemove', (e) => {
 	const mouseX = e.clientX;
@@ -46,17 +47,28 @@ catalogElements.forEach(catalogElement => {
 		const image = document.createElement('img');
 		image.src = 'vec.svg';
 		catalogElement.appendChild(image);
-		image.addEventListener('mouseenter', () => {
-			const mouseX2 = image.offsetLeft + image.clientWidth;
-			const mouseY2 = image.offsetTop;
-			windowBlock.style.top = mouseY2 + "px";
-			windowBlock.style.left = mouseX2 + "px";
-			windowBlock.style.visibility = 'visible';
+		catalogElement.style.cursor = 'pointer'
+		catalogElement.addEventListener('mouseenter', () => {
+			timer2 = setTimeout(() => {
+				const mouseX2 = image.offsetLeft + image.clientWidth;
+				const mouseY2 = image.offsetTop;
+				windowBlock.style.top = mouseY2 + "px";
+				windowBlock.style.left = mouseX2 + "px";
+				windowBlock.style.visibility = 'visible';
+			}, 300)
 		});
 		windowBlock.addEventListener('mouseleave', () => {
 			windowBlock.style.visibility = 'hidden '
+			clearTimeout(timer2);
 		});
 		catalog.addEventListener('mouseleave', () => {
+			windowBlock.style.visibility = 'hidden '
+			clearTimeout(timer2);
+		});
+		catalog.addEventListener('mouseout', () => {
+			clearTimeout(timer2);
+		});
+		catalogElement.addEventListener('mouseleave', () => {
 			windowBlock.style.visibility = 'hidden '
 		});
 	}
